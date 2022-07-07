@@ -31,7 +31,13 @@
             {
                 "name": "domain",
                 "type": "domain"
-            }
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "example": "/gamja",
+                "default": "/gamja"
+            },
         ]
     }
 }

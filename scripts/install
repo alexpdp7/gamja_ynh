@@ -21,7 +21,7 @@ ynh_abort_if_errors
 #=================================================
 
 domain=$YNH_APP_ARG_DOMAIN
-path_url="/"
+path_url=$YNH_APP_ARG_PATH
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -100,7 +100,7 @@ ynh_script_progression --message="Building Gamja... (this will take some time an
 pushd "$final_path"
 	ynh_use_nodejs
 	ynh_exec_warn_less npm i -g npm
-	ynh_exec_warn_less npm install --production
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH $ynh_npm install --production
 popd
 
 #=================================================
